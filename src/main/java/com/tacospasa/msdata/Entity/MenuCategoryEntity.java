@@ -10,7 +10,7 @@ import java.util.List;
 public class MenuCategoryEntity {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     private Long id;
     private String categoryName;
 
