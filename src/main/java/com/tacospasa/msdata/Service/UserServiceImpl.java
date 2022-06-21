@@ -18,14 +18,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public List<UserEntity> getAllUsers() {
-        List<UserEntity> response = new ArrayList<>();
-        repository.findAll().forEach(response::add);
-        return response;
+        return repository.findAll();
     }
 
     @Override
     public UserEntity getUserById(String id) {
-        return repository.findById(Long.parseLong(id));
+        return repository.findById(Integer.valueOf(id)).get();
     }
 
     @Override

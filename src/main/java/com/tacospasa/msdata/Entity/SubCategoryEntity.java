@@ -2,22 +2,23 @@ package com.tacospasa.msdata.Entity;
 
 import lombok.Data;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity(name = "sub_category")
 @Data
 @Embeddable
 public class SubCategoryEntity {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private Long id;
     private String subCategoryName;
+    private String pageName;
 
     public void setId(Long id) {
         this.id = id;
     }
 
-    @Id
     public Long getId() {
         return id;
     }

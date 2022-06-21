@@ -14,14 +14,13 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-
     @ApiOperation(value = "Get all the users", response = UserEntity.class, tags = "Users")
     @GetMapping(value = "/users")
     public List<UserEntity> getUserByRole() {
         return userService.getAllUsers();
     }
 
-    @ApiOperation(value = "Create user", response= UserEntity.class, tags = "Users")
+    @ApiOperation(value = "Get User by ID", response= UserEntity.class, tags = "Users")
     @GetMapping(value="/user")
     public UserEntity getUserById(@RequestParam String id){
         return userService.getUserById(id);
