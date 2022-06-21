@@ -1,0 +1,62 @@
+package com.tacospasa.msdata.Service;
+
+import com.tacospasa.msdata.Entity.UserEntity;
+import com.tacospasa.msdata.Repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+    @Autowired
+    private UserRepository repository;
+
+    @Override
+    public List<UserEntity> getAllUsers() {
+        List<UserEntity> response = new ArrayList<>();
+        repository.findAll().forEach(response::add);
+        return response;
+    }
+
+    @Override
+    public UserEntity getUserById(String id) {
+        return repository.findById(Long.parseLong(id));
+    }
+
+    @Override
+    public UserEntity getUserByUsername(String username) {
+        return repository.getUserByUsername(username);
+    }
+
+    @Override
+    public UserEntity createUser(UserEntity user) {
+        return repository.save(user);
+    }
+
+    @Override
+    public UserEntity updateUserStatus(String id,String status) {
+        UserEntity user = getUserById(id);
+        user.setStatus(status);
+        return repository.save(user);
+    }
+
+    @Override
+    public UserEntity updateUser(UserEntity user) {
+        String id_user = String.valueOf(user.getId());
+
+        if (getUserById(id_user) != null) {
+            return repository.save(user);
+        }
+        return new UserEntity();
+    }
+
+    @Override
+    public List<UserEntity> getAllUsersByStatus(String status) {
+        return repository.getUsersByStatus(status);
+    }
+}
