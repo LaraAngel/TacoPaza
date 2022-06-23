@@ -28,8 +28,8 @@ public class UserController {
 
     @ApiOperation(value = "Create user", response= UserEntity.class, tags = "Users")
     @GetMapping(value="/user/{username}")
-    public UserEntity getUserByUserName(@PathVariable String username){
-        return userService.getUserByUsername(username);
+    public UserEntity getUserByUserName(@PathVariable String userName){
+        return userService.getUserByUserName(userName);
     }
 
     @ApiOperation(value = "Create user", response= UserEntity.class, tags = "Users")
