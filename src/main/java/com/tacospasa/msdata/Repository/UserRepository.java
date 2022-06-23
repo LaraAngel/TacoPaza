@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface UserRepository extends JpaRepository<UserEntity, Integer> {
-    public UserEntity getUserByUsername(String username);
+    public UserEntity getUserByUserName(String userName);
 
     public List<UserEntity> getUsersByStatus(String status);
 
