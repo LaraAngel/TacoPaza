@@ -1,10 +1,7 @@
 package com.tacospasa.msdata.Controllers;
 
-import com.tacospasa.msdata.Entity.MenuCategoryEntity;
 import com.tacospasa.msdata.Entity.AccessEntity;
 import com.tacospasa.msdata.Service.AccessService;
-import com.tacospasa.msdata.Service.MenuCategoryService;
-import com.tacospasa.msdata.Service.SubCategoryService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/system/user")
+@RequestMapping(path = "/admin/user")
 public class AccessController {
 
     @Autowired
