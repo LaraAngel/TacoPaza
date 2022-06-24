@@ -5,9 +5,10 @@ import com.tacospasa.msdata.Entity.AccessEntity;
 import java.util.List;
 
 public interface AccessService{
-    AccessEntity createAccess(AccessEntity access);
-    AccessEntity createAccesses(List<AccessEntity> accessEntities);
-    List<AccessEntity> getAllAccesses();
+    public AccessEntity createAccess(AccessEntity access);
+    public AccessEntity createAccesses(List<AccessEntity> accessEntities);
+
+    public List<AccessEntity> getAllAccesses();
 
     AccessEntity getAccessById(int id);
 }

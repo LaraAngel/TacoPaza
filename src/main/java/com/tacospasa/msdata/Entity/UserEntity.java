@@ -18,8 +18,7 @@ public class UserEntity {
     private String lastname;
     private String username;
     private String password;
-    @OneToOne
-    private StatusEntity status;
+    private String status;
 
     public int getId() {
         return id;
