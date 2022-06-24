@@ -1,5 +1,6 @@
 package com.tacospasa.msdata.Controllers;
 
+import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Entity.UserEntity;
 import com.tacospasa.msdata.Service.UserService;
 import io.swagger.annotations.ApiOperation;
@@ -46,13 +47,13 @@ public class UserController {
 
     @ApiOperation(value = "Update user status", response= UserEntity.class, tags = "Users")
     @PutMapping(value = "/user/status")
-    public UserEntity updateUserStatus(@RequestParam String id, @RequestParam String status){
+    public UserEntity updateUserStatus(@RequestParam String id, @RequestParam StatusEntity status){
         return userService.updateUserStatus(id, status);
     }
 
     @ApiOperation(value = "Get users by Status", response= UserEntity.class, tags = "Users")
     @GetMapping(value= "/user/status")
-    public List<UserEntity> getAllUsersByStatus(@RequestParam String status){
+    public List<UserEntity> getAllUsersByStatus(@RequestParam StatusEntity status){
         return userService.getAllUsersByStatus(status);
     }
 }
