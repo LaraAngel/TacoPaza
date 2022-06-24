@@ -6,13 +6,13 @@ import com.tacospasa.msdata.Entity.UserEntity;
 import java.util.List;
 
 public interface UserService {
-    public List<UserEntity> getAllUsers();
-    public UserEntity getUserById(String id);
+    List<UserEntity> getAllUsers();
+    UserEntity getUserById(String id);
 
     UserEntity getUserByUserName(String userName);
 
-    public UserEntity createUser(UserEntity user);
-    public UserEntity updateUserStatus(String id, StatusEntity status);
-    public UserEntity updateUser(UserEntity user);
-    public List<UserEntity> getAllUsersByStatus(StatusEntity status);
+    UserEntity createUser(UserEntity user);
+    UserEntity updateUserStatus(String id, StatusEntity status);
+    UserEntity updateUser(UserEntity user);
+    List<UserEntity> getAllUsersByStatus(StatusEntity status);
 }
