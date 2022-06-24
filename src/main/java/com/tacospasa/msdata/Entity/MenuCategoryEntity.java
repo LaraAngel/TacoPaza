@@ -17,7 +17,6 @@ public class MenuCategoryEntity {
     @ElementCollection
     private List<SubCategoryEntity> subCategories;
 
-<<<<<<< Updated upstream
 
     public void setId(Long id) {
         this.id = id;
@@ -26,8 +25,4 @@ public class MenuCategoryEntity {
     public Long getId() {
         return id;
     }
-=======
-    @OneToOne
-    private StatusEntity status;
->>>>>>> Stashed changes
 }
