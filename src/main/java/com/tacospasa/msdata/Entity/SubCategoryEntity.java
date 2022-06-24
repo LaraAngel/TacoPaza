@@ -14,6 +14,7 @@ public class SubCategoryEntity {
     private Long id;
     private String subCategoryName;
     private String pageName;
+<<<<<<< Updated upstream
 
     public void setId(Long id) {
         this.id = id;
@@ -22,4 +23,8 @@ public class SubCategoryEntity {
     public Long getId() {
         return id;
     }
+=======
+    @OneToOne
+    private StatusEntity status;
+>>>>>>> Stashed changes
 }
