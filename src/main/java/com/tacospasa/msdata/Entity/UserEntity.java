@@ -16,7 +16,8 @@ public class UserEntity {
     private String lastName;
     private String userName;
     private String password;
-    private String status;
+    @OneToOne
+    private StatusEntity status;
 
     @ElementCollection
     private List<RoleEntity> roleEntityList;
