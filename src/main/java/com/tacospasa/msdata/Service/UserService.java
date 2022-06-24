@@ -1,5 +1,6 @@
 package com.tacospasa.msdata.Service;
 
+import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Entity.UserEntity;
 
 import java.util.List;
@@ -11,7 +12,7 @@ public interface UserService {
     UserEntity getUserByUserName(String userName);
 
     public UserEntity createUser(UserEntity user);
-    public UserEntity updateUserStatus(String id, String status);
+    public UserEntity updateUserStatus(String id, StatusEntity status);
     public UserEntity updateUser(UserEntity user);
-    public List<UserEntity> getAllUsersByStatus(String status);
+    public List<UserEntity> getAllUsersByStatus(StatusEntity status);
 }
