@@ -15,11 +15,11 @@ public class StatusController {
     private StatusService statusService;
 
     @ApiOperation(value = "Get status by Id", response = StatusEntity.class, tags = "Status")
-    @GetMapping(value = "/status/{id}")
+    @GetMapping(value = "/status")
     public StatusEntity getStatusById(@RequestParam Long id) { return statusService.getStatusById(id);}
 
     @ApiOperation(value = "Get all status", response = StatusEntity.class, tags = "Status")
-    @GetMapping(value = "/status")
+    @GetMapping(value = "/statuses")
     public List<StatusEntity> getAllStatus() { return statusService.getAllStatus();}
 
     @ApiOperation(value = "Create new Status", response = StatusEntity.class, tags = "Status")

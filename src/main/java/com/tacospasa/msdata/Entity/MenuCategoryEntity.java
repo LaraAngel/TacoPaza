@@ -14,7 +14,8 @@ public class MenuCategoryEntity {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     private String categoryName;
-
+    @OneToOne
+    private StatusEntity status;
     @ElementCollection
     private List<SubCategoryEntity> subCategories;
 

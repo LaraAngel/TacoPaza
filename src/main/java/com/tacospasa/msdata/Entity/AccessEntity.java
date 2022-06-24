@@ -14,6 +14,6 @@ public class AccessEntity {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private  String accessName;
-    private String status;
-
+    @OneToOne
+    private StatusEntity status;
 }
