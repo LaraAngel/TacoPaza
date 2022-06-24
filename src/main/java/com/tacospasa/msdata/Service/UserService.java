@@ -8,7 +8,7 @@ public interface UserService {
     public List<UserEntity> getAllUsers();
     public UserEntity getUserById(String id);
 
-    UserEntity getUserByUsername(String username);
+    UserEntity getUserByUserName(String userName);
 
     public UserEntity createUser(UserEntity user);
     public UserEntity updateUserStatus(String id, String status);

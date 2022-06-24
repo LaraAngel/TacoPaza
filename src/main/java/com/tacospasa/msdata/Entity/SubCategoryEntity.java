@@ -4,7 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity(name = "sub_category")
+@Entity
+@Table(name = "sub_category")
 @Data
 @Embeddable
 public class SubCategoryEntity {
@@ -15,11 +16,4 @@ public class SubCategoryEntity {
     private String subCategoryName;
     private String pageName;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }

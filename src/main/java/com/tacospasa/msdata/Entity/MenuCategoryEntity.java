@@ -5,7 +5,8 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.List;
 
-@Entity(name = "menu_category")
+@Entity
+@Table(name = "menu_category")
 @Data
 public class MenuCategoryEntity {
 
@@ -17,12 +18,4 @@ public class MenuCategoryEntity {
     @ElementCollection
     private List<SubCategoryEntity> subCategories;
 
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }

@@ -4,7 +4,8 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity(name = "access")
+@Entity
+@Table(name = "access")
 @Data
 @Embeddable
 public class AccessEntity {
@@ -12,14 +13,7 @@ public class AccessEntity {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private  String access_name;
+    private  String accessName;
     private String status;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
-    }
 }
