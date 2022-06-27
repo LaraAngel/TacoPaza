@@ -15,5 +15,6 @@ public class SubCategoryEntity {
     private Long id;
     private String subCategoryName;
     private String pageName;
-
+    @OneToOne
+    private StatusEntity status;
 }

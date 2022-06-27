@@ -15,7 +15,8 @@ public class RoleEntity {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private  String roleName;
-    private String status;
+    @OneToOne
+    private StatusEntity status;
     @ElementCollection
     private List<AccessEntity> access;
 }
