@@ -1,14 +1,14 @@
 package com.tacospasa.msdata.Repository;
 
+import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Entity.UserEntity;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface UserRepository extends CrudRepository<UserEntity, Integer> {
-    public UserEntity getUserByUsername(String username);
+public interface UserRepository extends JpaRepository<UserEntity, Integer> {
+    public UserEntity getUserByUserName(String userName);
 
-    public List<UserEntity> getUsersByStatus(String status);
+    public List<UserEntity> getUsersByStatus(StatusEntity status);
 
-    public UserEntity findById(long id);
 }

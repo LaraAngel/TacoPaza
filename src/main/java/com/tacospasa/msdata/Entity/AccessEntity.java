@@ -3,20 +3,17 @@ package com.tacospasa.msdata.Entity;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
-@Table(name = "role")
+@Table(name = "access")
 @Data
 @Embeddable
-public class RoleEntity {
+public class AccessEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
-    private  String roleName;
+    private  String accessName;
     @OneToOne
     private StatusEntity status;
-    @ElementCollection
-    private List<AccessEntity> access;
 }
