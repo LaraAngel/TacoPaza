@@ -15,7 +15,7 @@ public class SubCategoryServiceImpl implements SubCategoryService {
 
     @Override
     public SubCategoryEntity createSubCategory(SubCategoryEntity subCategory) {
-        return repository.save(subCategory);
+        return repository.saveAndFlush(subCategory);
     }
 
     @Override

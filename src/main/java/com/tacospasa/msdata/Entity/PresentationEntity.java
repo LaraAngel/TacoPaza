@@ -1,18 +1,21 @@
 package com.tacospasa.msdata.Entity;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity
-@Table(name = "unitmeasures")
 @Data
-public class UnitMeasureEntity {
+@Table(name = "presentation")
+public class PresentationEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String unitMeasureName;
-    private String unitMeasureDescription;
+    private String presentationName;
+    private String presentationDescription;
+
     @OneToOne
     private StatusEntity status;
+
+    @OneToOne
+    private UnitEntity unitMeasure;
 }

@@ -14,7 +14,7 @@ public class DepartmentServiceImpl implements DepartmentService{
     @Override
     public DepartmentEntity deleteDepartmentById(long id) { return repository.deleteById(id);}
     @Override
-    public DepartmentEntity createDepartment(DepartmentEntity department) {return repository.save(department);}
+    public DepartmentEntity createDepartment(DepartmentEntity department) {return repository.saveAndFlush(department);}
     @Override
     public List<DepartmentEntity> getAllDepartments() {return repository.findAll();}
     @Override

@@ -19,7 +19,7 @@ public class StatusServiceImpl implements StatusService{
     public StatusEntity getStatusById(Long id) { return repository.findById(id);   }
 
     @Override
-    public StatusEntity createStatus(StatusEntity status) { return repository.save(status);    }
+    public StatusEntity createStatus(StatusEntity status) { return repository.saveAndFlush(status);    }
 
     @Override
     public StatusEntity deleteStatusById(Long id) { return repository.deleteById(id);    }
