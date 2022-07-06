@@ -20,7 +20,7 @@ public class SubCategoryServiceImpl implements SubCategoryService {
 
     @Override
     public SubCategoryEntity createMultipleSubCategories(List<SubCategoryEntity> subCategories) {
-        subCategories.stream().forEach(subCategory -> repository.saveAllAndFlush(subCategory));
+        subCategories.stream().forEach(subCategory -> repository.save(subCategory));
         return new SubCategoryEntity();
     }
 
