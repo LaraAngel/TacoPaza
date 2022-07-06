@@ -7,7 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "unitmeasures")
 @Data
-public class UnitMeasureEntity {
+public class UnitEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -34,6 +34,6 @@ public class PaymentMethodServiceImpl implements PaymentMethodService{
 
     @Override
     public PaymentMethodEntity CreatePaymentMethod(PaymentMethodEntity paymentMethod) {
-        return repository.save(paymentMethod);
+        return repository.saveAndFlush(paymentMethod);
     }
 }

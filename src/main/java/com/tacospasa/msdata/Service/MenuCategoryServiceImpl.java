@@ -26,7 +26,7 @@ public class MenuCategoryServiceImpl implements MenuCategoryService {
 
     @Override
     public MenuCategoryEntity createNewMenuCategory(MenuCategoryEntity menuCategory) {
-        return repository.save(menuCategory);
+        return repository.saveAndFlush(menuCategory);
     }
 
     @Override

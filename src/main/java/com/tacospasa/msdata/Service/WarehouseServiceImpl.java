@@ -20,7 +20,7 @@ public class WarehouseServiceImpl implements WarehouseService{
     }
     @Override
     public WarehouseEntity createNewWarehouse(WarehouseEntity warehouse) {
-        return repository.save(warehouse);
+        return repository.saveAndFlush(warehouse);
     }
     @Override
     public WarehouseEntity deleteWarehouseById(Long id) {

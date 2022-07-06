@@ -16,7 +16,7 @@ public class AccessServiceImpl implements AccessService {
 
     @Override
     public AccessEntity createAccess(AccessEntity access) {
-        return repository.save(access);
+        return repository.saveAndFlush(access);
     }
 
 
