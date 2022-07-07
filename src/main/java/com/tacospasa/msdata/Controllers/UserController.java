@@ -1,5 +1,6 @@
 package com.tacospasa.msdata.Controllers;
 
+import com.tacospasa.msdata.Entity.RoleEntity;
 import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Entity.UserEntity;
 import com.tacospasa.msdata.Service.UserService;
@@ -49,4 +50,7 @@ public class UserController {
     public UserEntity updateUserStatus(@RequestParam String id, @RequestParam StatusEntity status){
         return userService.updateUserStatus(id, status);
     }
+    @ApiOperation(value = "Get user by role", response = UserEntity.class, tags = "Users")
+    @GetMapping(value = "/user/role")
+    public List<UserEntity> getAllUsersByRole(@RequestParam RoleEntity role){ return userService.getAllUsersByRole(role);}
 }

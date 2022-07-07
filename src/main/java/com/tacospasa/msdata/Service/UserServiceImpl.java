@@ -1,5 +1,6 @@
 package com.tacospasa.msdata.Service;
 
+import com.tacospasa.msdata.Entity.RoleEntity;
 import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Entity.UserEntity;
 import com.tacospasa.msdata.Repository.UserRepository;
@@ -47,6 +48,11 @@ public class UserServiceImpl implements UserService {
             return repository.saveAndFlush(user);
         }
         return new UserEntity();
+    }
+
+    @Override
+    public List<UserEntity> getAllUsersByRole(RoleEntity role) {
+        return repository.getUserByRole(role);
     }
 
     @Override
