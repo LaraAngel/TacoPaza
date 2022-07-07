@@ -10,22 +10,18 @@ import java.util.List;
 public class PresentationServiceImpl implements PresentationService {
     @Autowired
     private PresentationRepository repository;
-
     @Override
     public PresentationEntity getPresentationById(Long id) {
         return repository.getReferenceById(Math.toIntExact(id));
     }
-
     @Override
     public List<PresentationEntity> getAllPresentations() {
         return repository.findAll();
     }
-
     @Override
     public PresentationEntity createPresentation(PresentationEntity presentation) {
         return repository.saveAndFlush(presentation);
     }
-
     @Override
     public PresentationEntity updatePresentation(PresentationEntity presentation) {
         Long id = presentation.getId();

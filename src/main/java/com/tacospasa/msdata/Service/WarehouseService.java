@@ -8,5 +8,5 @@ public interface WarehouseService {
     List<WarehouseEntity> getAllWarehouses();
     WarehouseEntity getWarehouseById(Long id);
     WarehouseEntity createNewWarehouse(WarehouseEntity warehouse);
-    WarehouseEntity deleteWarehouseById(Long id);
+    WarehouseEntity updateWarehouse(WarehouseEntity warehouse);
 }
