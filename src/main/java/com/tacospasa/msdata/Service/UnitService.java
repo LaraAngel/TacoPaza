@@ -5,8 +5,8 @@ import com.tacospasa.msdata.Entity.UnitEntity;
 import java.util.List;
 
 public interface UnitService {
-    List<UnitEntity> getAllMeasurementUnits();
-    UnitEntity createUnitMeasure(UnitEntity unitMeasure);
-    UnitEntity deleteUnitMeasureById(Long id);
-    UnitEntity getUnitMeasureById(Long id);
+    UnitEntity getUnitById(Long id);
+    List<UnitEntity> getAllUnits();
+    UnitEntity createUnit(UnitEntity unit);
+    UnitEntity updateUnit(UnitEntity unit);
 }

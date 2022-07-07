@@ -12,12 +12,11 @@ public class UnitServiceImpl implements UnitService {
     @Autowired
     private UnitRepository repository;
     @Override
-    public UnitEntity deleteUnitMeasureById(Long id) {return repository.deleteById(id);}
+    public UnitEntity updateUnit(UnitEntity unit) {return repository.saveAndFlush(unit);}
     @Override
-    public List<UnitEntity> getAllMeasurementUnits() {return repository.findAll();    }
+    public List<UnitEntity> getAllUnits() {return repository.findAll();    }
     @Override
-    public UnitEntity getUnitMeasureById(Long id) {return repository.findById(id);    }
-
+    public UnitEntity getUnitById(Long id) {return repository.findById(id);    }
     @Override
-    public UnitEntity createUnitMeasure(UnitEntity unitMeasure) {return repository.saveAndFlush(unitMeasure);    }
+    public UnitEntity createUnit(UnitEntity unit) {return repository.saveAndFlush(unit);    }
 }
