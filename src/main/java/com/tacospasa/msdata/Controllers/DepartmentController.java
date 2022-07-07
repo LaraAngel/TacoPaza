@@ -19,9 +19,12 @@ public class DepartmentController {
     @PostMapping(value = "/department/new")
     public DepartmentEntity createDepartment(@RequestParam DepartmentEntity department){ return departmentService.createDepartment(department);}
     @ApiOperation(value = "Get department by ID", response = DepartmentEntity.class, tags = "Department")
-    @GetMapping(value = "department/{id}")
+    @GetMapping(value = "/department/{id}")
     public DepartmentEntity getDepartmentById(@PathVariable Long id){return departmentService.getDepartmentById(id);}
     @ApiOperation(value = "Get all departments", response = DepartmentEntity.class, tags = "Department")
-    @GetMapping(value = "departments")
+    @GetMapping(value = "/departments")
     public List<DepartmentEntity> getAllDepartments(){return departmentService.getAllDepartments();}
+    @ApiOperation(value = "Delete departments by id", response = DepartmentEntity.class, tags = "Department")
+    @DeleteMapping(value = "/departments")
+    public DepartmentEntity deleteDepartment(@PathVariable Long id){return departmentService.deleteDepartmentById(id);}
 }
