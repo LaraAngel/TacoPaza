@@ -14,15 +14,15 @@ public class WarehouseController {
     @Autowired
     private WarehouseService warehouseService;
     @ApiOperation(value = "Get warehouse by ID", response = WarehouseEntity.class, tags = "Warehouse")
-    @GetMapping(value = "/Warehouse")
-    public WarehouseEntity getWarehouseById(@RequestParam Long id){return warehouseService.getWarehouseById(id);}
+    @GetMapping(value = "/Warehouse/{id}")
+    public WarehouseEntity getWarehouseById(@PathVariable Long id){return warehouseService.getWarehouseById(id);}
     @ApiOperation(value = "Get all warehouses", response = WarehouseEntity.class, tags = "Warehouse")
     @GetMapping(value = "/Warehouses")
     public List<WarehouseEntity> getAllWarehouses(){return warehouseService.getAllWarehouses();}
     @ApiOperation(value = "create warehouse", response = WarehouseEntity.class, tags = "Warehouse")
     @PostMapping(value = "/Warehouse")
     public WarehouseEntity createNewWarehouse(@RequestParam WarehouseEntity warehouse){return warehouseService.createNewWarehouse(warehouse);}
-    @ApiOperation(value = "delete warehouse", response = WarehouseEntity.class, tags = "Warehouse")
-    @DeleteMapping(value = "/Warehouse")
-    public WarehouseEntity deleteWarehouseById(@RequestParam Long id){return warehouseService.deleteWarehouseById(id);}
+    @ApiOperation(value = "update warehouse", response = WarehouseEntity.class, tags = "Warehouse")
+    @PutMapping(value = "/Warehouse")
+    public WarehouseEntity deleteWarehouseById(@RequestBody WarehouseEntity warehouse){return warehouseService.updateWarehouse(warehouse);}
 }

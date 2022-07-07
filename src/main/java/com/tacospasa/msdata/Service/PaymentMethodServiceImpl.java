@@ -27,7 +27,7 @@ public class PaymentMethodServiceImpl implements PaymentMethodService{
         String id = String.valueOf(paymentMethod.getId());
 
         if (getPaymentMethodById(Long.valueOf(id)) != null) {
-            return repository.save(paymentMethod);
+            return repository.saveAndFlush(paymentMethod);
         }
         return new PaymentMethodEntity();
     }

@@ -36,7 +36,7 @@ public class UserServiceImpl implements UserService {
     public UserEntity updateUserStatus(String id,StatusEntity status) {
         UserEntity user = getUserById(id);
         user.setStatus(status);
-        return repository.save(user);
+        return repository.saveAndFlush(user);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
         String id_user = String.valueOf(user.getId());
 
         if (getUserById(id_user) != null) {
-            return repository.save(user);
+            return repository.saveAndFlush(user);
         }
         return new UserEntity();
     }

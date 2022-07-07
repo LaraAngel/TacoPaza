@@ -15,16 +15,12 @@ import java.util.List;
 public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
-
-    @ApiOperation(value = "Delete department by ID", response = DepartmentEntity.class, tags = "Department")
-    @DeleteMapping(value = "/department")
-    public DepartmentEntity deleteDepartmentById(@RequestParam Long id){return departmentService.deleteDepartmentById(id);}
     @ApiOperation(value = "Create new department", response = DepartmentEntity.class, tags = "Department")
-    @GetMapping(value = "/department/new")
+    @PostMapping(value = "/department/new")
     public DepartmentEntity createDepartment(@RequestParam DepartmentEntity department){ return departmentService.createDepartment(department);}
     @ApiOperation(value = "Get department by ID", response = DepartmentEntity.class, tags = "Department")
-    @GetMapping(value = "department")
-    public DepartmentEntity getDepartmentById(@RequestParam Long id){return departmentService.getDepartmentById(id);}
+    @GetMapping(value = "department/{id}")
+    public DepartmentEntity getDepartmentById(@PathVariable Long id){return departmentService.getDepartmentById(id);}
     @ApiOperation(value = "Get all departments", response = DepartmentEntity.class, tags = "Department")
     @GetMapping(value = "departments")
     public List<DepartmentEntity> getAllDepartments(){return departmentService.getAllDepartments();}

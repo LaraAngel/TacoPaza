@@ -34,7 +34,7 @@ public class RoleServiceImpl implements RoleService{
         List<AccessEntity> accessFromDB = role.getAccess();
         accessFromDB.addAll(accessEntities);
         role.setAccess(accessEntities);
-        return repository.save(role);
+        return repository.saveAndFlush(role);
     }
 
     @Override
@@ -43,5 +43,5 @@ public class RoleServiceImpl implements RoleService{
         List<AccessEntity> accessFromDB = role.getAccess();
         accessFromDB.add(access);
         role.setAccess(accessFromDB);
-        return repository.save(role);    }
+        return repository.saveAndFlush(role);    }
 }
