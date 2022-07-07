@@ -15,14 +15,14 @@ public class UnitController {
     private UnitService service;
     @ApiOperation(value = "get all measurement units", response = UnitEntity.class, tags = "Measurement units")
     @GetMapping(value = "/units")
-    public List<UnitEntity> getAllMeasurementUnits(){return service.getAllMeasurementUnits();}
+    public List<UnitEntity> getAllMeasurementUnits(){return service.getAllUnits();}
     @ApiOperation(value = "get measurement unit by it", response = UnitEntity.class, tags = "Measurement units")
-    @GetMapping(value = "unit")
-    public UnitEntity getUnitMeasureBuId(@RequestParam Long id){ return service.getUnitMeasureById(id);}
-    @ApiOperation(value = "delete measurement unit by id", response = UnitEntity.class, tags = "Measurement units")
-    @DeleteMapping(value = "unit")
-    public UnitEntity deleteUnitMeasureById(@RequestParam Long id){return service.deleteUnitMeasureById(id);}
+    @GetMapping(value = "/unit")
+    public UnitEntity getUnitMeasureBuId(@RequestParam Long id){ return service.getUnitById(id);}
+    @ApiOperation(value = "update measurement unit by id", response = UnitEntity.class, tags = "Measurement units")
+    @PutMapping(value = "/unit")
+    public UnitEntity updateUnitMeasure(@RequestBody UnitEntity unit){return service.updateUnit(unit);}
     @ApiOperation(value = "create measurement unit", response = UnitEntity.class, tags = "Measurement units")
-    @PostMapping(value = "unit")
-    public UnitEntity createUnitMeasure(@RequestParam UnitEntity unitMeasure){return service.createUnitMeasure(unitMeasure);}
+    @PostMapping(value = "/unit")
+    public UnitEntity createUnitMeasure(@RequestParam UnitEntity unit){return service.createUnit(unit);}
 }
