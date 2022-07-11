@@ -16,7 +16,7 @@ public class UnitServiceImpl implements UnitService {
     @Override
     public List<UnitEntity> getAllUnits() {return repository.findAll();    }
     @Override
-    public UnitEntity getUnitById(Long id) {return repository.findById(id);    }
+    public UnitEntity getUnitById(Long id) {return repository.getReferenceById(id);    }
     @Override
     public UnitEntity createUnit(UnitEntity unit) {return repository.saveAndFlush(unit);    }
 }

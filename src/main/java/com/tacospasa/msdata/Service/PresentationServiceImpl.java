@@ -12,7 +12,7 @@ public class PresentationServiceImpl implements PresentationService {
     private PresentationRepository repository;
     @Override
     public PresentationEntity getPresentationById(Long id) {
-        return repository.getReferenceById(Math.toIntExact(id));
+        return repository.getReferenceById(id);
     }
     @Override
     public List<PresentationEntity> getAllPresentations() {

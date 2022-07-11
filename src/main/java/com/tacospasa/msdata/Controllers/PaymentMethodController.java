@@ -1,9 +1,9 @@
 package com.tacospasa.msdata.Controllers;
 
 import com.tacospasa.msdata.Entity.PaymentMethodEntity;
-import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Entity.UserEntity;
 import com.tacospasa.msdata.Service.PaymentMethodService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/payments")
+@Api(tags = "Payment Method")
 public class PaymentMethodController {
     @Autowired
     private PaymentMethodService paymentMethodService;

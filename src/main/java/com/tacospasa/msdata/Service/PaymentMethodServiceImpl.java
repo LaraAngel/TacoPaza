@@ -18,18 +18,11 @@ public class PaymentMethodServiceImpl implements PaymentMethodService{
     }
 
     @Override
-    public PaymentMethodEntity getPaymentMethodById(Long id) {
-        return repository.getReferenceById(Math.toIntExact(id));
-    }
+    public PaymentMethodEntity getPaymentMethodById(Long id) {return repository.getReferenceById(id);}
 
     @Override
     public PaymentMethodEntity UpdatePaymentMethod(PaymentMethodEntity paymentMethod) {
-        String id = String.valueOf(paymentMethod.getId());
-
-        if (getPaymentMethodById(Long.valueOf(id)) != null) {
-            return repository.saveAndFlush(paymentMethod);
-        }
-        return new PaymentMethodEntity();
+        return repository.saveAndFlush(paymentMethod);
     }
 
     @Override

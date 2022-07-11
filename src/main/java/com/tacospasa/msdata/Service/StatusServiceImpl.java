@@ -8,19 +8,17 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 @Service
 public class StatusServiceImpl implements StatusService{
-
     @Autowired
     private StatusRepository repository;
-
     @Override
     public List<StatusEntity> getAllStatus() { return repository.findAll();  }
-
     @Override
-    public StatusEntity getStatusById(Long id) { return repository.findById(id);   }
-
+    public StatusEntity getStatusById(Long id) { return repository.getReferenceById(id);   }
     @Override
     public StatusEntity createStatus(StatusEntity status) { return repository.saveAndFlush(status);    }
-
     @Override
-    public StatusEntity deleteStatusById(Long id) { return repository.deleteById(id);    }
+    public void deleteStatusById(Long id) { repository.deleteById(id);    }
+    @Override
+    public StatusEntity updateStatus(StatusEntity status) {return repository.saveAndFlush(status);}
+
 }

@@ -1,16 +1,14 @@
 package com.tacospasa.msdata.Entity;
 
 import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "status")
+@Table(name = "provider")
 @Data
-public class
-StatusEntity {
+public class ProviderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String statusName;
-    private String statusDescripction;
 }

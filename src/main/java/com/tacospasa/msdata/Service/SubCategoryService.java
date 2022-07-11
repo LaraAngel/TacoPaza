@@ -8,5 +8,5 @@ public interface SubCategoryService {
      SubCategoryEntity createSubCategory(SubCategoryEntity subCategory);
      SubCategoryEntity createMultipleSubCategories(List<SubCategoryEntity> subCategory);
      List<SubCategoryEntity> getAllSubCategories();
-     SubCategoryEntity getSubCategoryById(int id);
+     SubCategoryEntity getSubCategoryById(Long id);
 }

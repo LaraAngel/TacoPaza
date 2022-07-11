@@ -8,6 +8,5 @@ public interface AccessService{
     AccessEntity createAccess(AccessEntity access);
     AccessEntity createAccesses(List<AccessEntity> accessEntities);
     List<AccessEntity> getAllAccesses();
-
-    AccessEntity getAccessById(int id);
+    AccessEntity getAccessById(Long id);
 }

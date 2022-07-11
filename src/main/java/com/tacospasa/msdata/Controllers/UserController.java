@@ -4,6 +4,7 @@ import com.tacospasa.msdata.Entity.RoleEntity;
 import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Entity.UserEntity;
 import com.tacospasa.msdata.Service.UserService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -12,12 +13,13 @@ import java.util.List;
 
 @RequestMapping(path="/admin")
 @RestController
+@Api(tags = "Users")
 public class UserController {
     @Autowired
     private UserService userService;
     @ApiOperation(value = "Get User by ID", response= UserEntity.class, tags = "Users")
     @GetMapping(value="/user/{id}")
-    public UserEntity getUserById(@PathVariable String id){
+    public UserEntity getUserById(@PathVariable Long id){
         return userService.getUserById(id);
     }
     @ApiOperation(value = "Get user by username", response= UserEntity.class, tags = "Users")
@@ -47,7 +49,7 @@ public class UserController {
     }
     @ApiOperation(value = "Update user status", response= UserEntity.class, tags = "Users")
     @PutMapping(value = "/user/status")
-    public UserEntity updateUserStatus(@RequestParam String id, @RequestParam StatusEntity status){
+    public UserEntity updateUserStatus(@RequestParam Long id, @RequestParam StatusEntity status){
         return userService.updateUserStatus(id, status);
     }
     @ApiOperation(value = "Get user by role", response = UserEntity.class, tags = "Users")

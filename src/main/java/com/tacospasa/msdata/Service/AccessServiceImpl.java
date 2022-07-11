@@ -10,29 +10,23 @@ import java.util.List;
 
 @Service
 public class AccessServiceImpl implements AccessService {
-
     @Autowired
     private AccessRepository repository;
-
     @Override
     public AccessEntity createAccess(AccessEntity access) {
         return repository.saveAndFlush(access);
     }
-
-
     @Override
     public AccessEntity createAccesses(List<AccessEntity> accessEntities) {
         accessEntities.stream().forEach(access -> repository.save(access));
         return new AccessEntity();
     }
-
     @Override
     public List<AccessEntity> getAllAccesses() {
         return repository.findAll();
     }
-
     @Override
-    public AccessEntity getAccessById(int id) {
+    public AccessEntity getAccessById(Long id) {
         return repository.getReferenceById(id);
     }
 }

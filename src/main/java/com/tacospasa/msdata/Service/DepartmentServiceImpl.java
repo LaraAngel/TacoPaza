@@ -12,11 +12,9 @@ public class DepartmentServiceImpl implements DepartmentService{
     @Autowired
     private DepartmentRepository repository;
     @Override
-    public DepartmentEntity deleteDepartmentById(long id) { return repository.deleteById(id);}
-    @Override
     public DepartmentEntity createDepartment(DepartmentEntity department) {return repository.saveAndFlush(department);}
     @Override
     public List<DepartmentEntity> getAllDepartments() {return repository.findAll();}
     @Override
-    public DepartmentEntity getDepartmentById(Long id) {return repository.findById(id);}
+    public DepartmentEntity getDepartmentById(Long id) {return repository.getReferenceById(id);}
 }

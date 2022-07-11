@@ -8,7 +8,6 @@ public interface StatusService {
     List<StatusEntity> getAllStatus();
     StatusEntity getStatusById(Long id);
     StatusEntity createStatus(StatusEntity status);
-    StatusEntity deleteStatusById(Long id);
-
-
+    void deleteStatusById(Long id);
+    StatusEntity updateStatus(StatusEntity status);
 }
