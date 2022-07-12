@@ -7,6 +7,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "food_product_rule")
 @Data
+@Embeddable
 public class FoodProductRuleEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
