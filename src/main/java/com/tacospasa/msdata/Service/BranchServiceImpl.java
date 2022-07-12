@@ -1,8 +1,6 @@
 package com.tacospasa.msdata.Service;
 
 import com.tacospasa.msdata.Entity.BranchEntity;
-import com.tacospasa.msdata.Entity.StatusEntity;
-import com.tacospasa.msdata.Entity.UserEntity;
 import com.tacospasa.msdata.Repository.BranchRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +12,7 @@ public class BranchServiceImpl implements BranchService{
     private BranchRepository repository;
     @Override
     public BranchEntity getBranchById(Long id) {
-        return repository.getById(Math.toIntExact(id));
+        return repository.getReferenceById(id);
     }
 
     @Override
@@ -23,8 +21,8 @@ public class BranchServiceImpl implements BranchService{
     }
 
     @Override
-    public List<BranchEntity> getAllBranchesByUser(UserEntity user) {
-        return repository.findBranchByUser(user);
+    public List<BranchEntity> getAllBranchesByUser(Long id) {
+        return repository.findBranchByUser(id);
     }
 
     @Override
@@ -38,7 +36,7 @@ public class BranchServiceImpl implements BranchService{
     }
 
     @Override
-    public List<BranchEntity> getAllBranchesByStatus(StatusEntity status) {
-        return repository.findBranchByStatus(status);
+    public List<BranchEntity> getAllBranchesByStatus(Long id) {
+        return repository.findBranchByStatus(id);
     }
 }

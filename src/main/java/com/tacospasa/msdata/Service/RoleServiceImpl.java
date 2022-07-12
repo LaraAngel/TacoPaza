@@ -14,10 +14,9 @@ public class RoleServiceImpl implements RoleService{
     private RoleRepository repository;
 
     @Override
-    public RoleEntity getRoleById(int id) {
+    public RoleEntity getRoleById(Long id) {
         return repository.getReferenceById(id);
     }
-
     @Override
     public List<RoleEntity> getAllRoles() {
         return repository.findAll();
@@ -29,16 +28,7 @@ public class RoleServiceImpl implements RoleService{
     }
 
     @Override
-    public RoleEntity addAccesses(List<AccessEntity> accessEntities, int id) {
-        RoleEntity role = getRoleById(id);
-        List<AccessEntity> accessFromDB = role.getAccess();
-        accessFromDB.addAll(accessEntities);
-        role.setAccess(accessEntities);
-        return repository.saveAndFlush(role);
-    }
-
-    @Override
-    public RoleEntity addAccess(AccessEntity access, int id) {
+    public RoleEntity addAccess(AccessEntity access, Long id) {
         RoleEntity role = getRoleById(id);
         List<AccessEntity> accessFromDB = role.getAccess();
         accessFromDB.add(access);

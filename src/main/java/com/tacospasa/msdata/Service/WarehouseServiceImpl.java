@@ -16,7 +16,7 @@ public class WarehouseServiceImpl implements WarehouseService{
     public List<WarehouseEntity> getAllWarehouses() {return repository.findAll();}
     @Override
     public WarehouseEntity getWarehouseById(Long id) {
-        return repository.findById(id);
+        return repository.findById(id).get();
     }
     @Override
     public WarehouseEntity createNewWarehouse(WarehouseEntity warehouse) {

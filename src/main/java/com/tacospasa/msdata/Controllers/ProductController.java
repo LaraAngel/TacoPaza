@@ -2,6 +2,7 @@ package com.tacospasa.msdata.Controllers;
 
 import com.tacospasa.msdata.Entity.ProductEntity;
 import com.tacospasa.msdata.Service.ProductService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -9,7 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/inventory")
+@RequestMapping(path = "/inventory")
+@Api(tags = "product")
 public class ProductController {
     @Autowired
     private ProductService productService;

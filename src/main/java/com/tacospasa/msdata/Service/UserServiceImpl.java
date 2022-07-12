@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity getUserById(String id) { return repository.findById(Integer.valueOf(id)).get();
+    public UserEntity getUserById(Long id) { return repository.findById(id).get();
     }
 
     @Override
@@ -34,21 +34,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity updateUserStatus(String id,StatusEntity status) {
+    public UserEntity updateUserStatus(Long id,StatusEntity status) {
         UserEntity user = getUserById(id);
         user.setStatus(status);
         return repository.saveAndFlush(user);
     }
 
     @Override
-    public UserEntity updateUser(UserEntity user) {
-        String id_user = String.valueOf(user.getId());
-
-        if (getUserById(id_user) != null) {
-            return repository.saveAndFlush(user);
-        }
-        return new UserEntity();
-    }
+    public UserEntity updateUser(UserEntity user) {return repository.saveAndFlush(user);}
 
     @Override
     public List<UserEntity> getAllUsersByRole(RoleEntity role) {

@@ -30,7 +30,7 @@ public class SubCategoryServiceImpl implements SubCategoryService {
     }
 
     @Override
-    public SubCategoryEntity getSubCategoryById(int id) {
+    public SubCategoryEntity getSubCategoryById(Long id) {
         return repository.getReferenceById(id);
     }
 }

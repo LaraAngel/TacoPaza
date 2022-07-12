@@ -1,17 +1,17 @@
 package com.tacospasa.msdata.Controllers;
 
 import com.tacospasa.msdata.Entity.DepartmentEntity;
-import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Service.DepartmentService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.SpelQueryContext;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "/admin")
+@Api(tags = "Department")
 public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
@@ -24,7 +24,4 @@ public class DepartmentController {
     @ApiOperation(value = "Get all departments", response = DepartmentEntity.class, tags = "Department")
     @GetMapping(value = "/departments")
     public List<DepartmentEntity> getAllDepartments(){return departmentService.getAllDepartments();}
-    @ApiOperation(value = "Delete departments by id", response = DepartmentEntity.class, tags = "Department")
-    @DeleteMapping(value = "/departments")
-    public DepartmentEntity deleteDepartment(@PathVariable Long id){return departmentService.deleteDepartmentById(id);}
-}
+    }

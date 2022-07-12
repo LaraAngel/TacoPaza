@@ -11,7 +11,7 @@ public class ProductServiceImpl implements ProductService{
     @Autowired
     private ProductRepository repository;
     @Override
-    public ProductEntity getProductById(Long id) { return repository.getReferenceById(Math.toIntExact(id));}
+    public ProductEntity getProductById(Long id) { return repository.getReferenceById(id);}
     @Override
     public List<ProductEntity> getAllProducts() {return repository.findAll();}
     @Override

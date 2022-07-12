@@ -14,7 +14,7 @@ public class MenuCategoryServiceImpl implements MenuCategoryService {
     @Autowired
     private MenuCategoryRepository repository;
     @Override
-    public MenuCategoryEntity getMenuCategoryById(int id) {
+    public MenuCategoryEntity getMenuCategoryById(Long id) {
         return repository.getReferenceById(id);
     }
     @Override
@@ -26,7 +26,7 @@ public class MenuCategoryServiceImpl implements MenuCategoryService {
         return repository.saveAndFlush(menuCategory);
     }
     @Override
-    public MenuCategoryEntity addSubCategories(List<SubCategoryEntity> subCategories, int id) {
+    public MenuCategoryEntity addSubCategories(List<SubCategoryEntity> subCategories, Long id) {
         MenuCategoryEntity menu = getMenuCategoryById(id);
         List<SubCategoryEntity> subCategoriesFromDB = menu.getSubCategories();
         subCategoriesFromDB.addAll(subCategories);
@@ -34,7 +34,7 @@ public class MenuCategoryServiceImpl implements MenuCategoryService {
         return repository.saveAndFlush(menu);
     }
     @Override
-    public MenuCategoryEntity addSubCategory(SubCategoryEntity subCategory, int id) {
+    public MenuCategoryEntity addSubCategory(SubCategoryEntity subCategory, Long id) {
         MenuCategoryEntity menu = getMenuCategoryById(id);
         List<SubCategoryEntity> subCategoriesFromDB = menu.getSubCategories();
         subCategoriesFromDB.add(subCategory);
