@@ -1,2 +1,4 @@
-package com.tacospasa.msdata.Controllers;public class PaymentController {
+package com.tacospasa.msdata.Controllers;
+
+public class PaymentController {
 }
