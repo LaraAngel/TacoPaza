@@ -18,36 +18,36 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public PaymentEntity getPaymentById(Long id) {
-        return null;
+        return repository.getReferenceById(id);
     }
 
     @Override
     public List<PaymentEntity> getAllPayment() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public List<PaymentEntity> getPaymentByPaymentMethod(PaymentMethodEntity paymentMethod) {
-        return null;
+        return repository.getPaymentByPaymentMethod(paymentMethod);
     }
 
     @Override
     public List<PaymentEntity> getPaymentByDate(Date date) {
-        return null;
+        return repository.getPaymentByDate(date);
     }
 
     @Override
     public List<PaymentEntity> getPaymentByStatus(StatusEntity status) {
-        return null;
+        return repository.getPaymentByStatus(status);
     }
 
     @Override
     public PaymentEntity createPayment(PaymentEntity payment) {
-        return null;
+        return repository.saveAndFlush(payment);
     }
 
     @Override
     public PaymentEntity updatePayment(PaymentEntity payment) {
-        return null;
+        return repository.saveAndFlush(payment);
     }
 }
