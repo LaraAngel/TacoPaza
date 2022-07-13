@@ -18,16 +18,16 @@ import java.util.List;
 public class FoodProductController {
     @Autowired
     private FoodProductService productService;
-    @ApiOperation(value = "get food product by id",response = FoodProductEntity.class,tags = "Food product")
+    @ApiOperation(value = "get food product by id",response = FoodProductEntity.class,tags = "Food Product")
     @GetMapping(value = "/product/{id}")
     public ResponseEntity<FoodProductEntity> getFoodProductById(@PathVariable Long id){return new ResponseEntity<>(productService.getFoodProductById(id), HttpStatus.OK);}
-    @ApiOperation(value = "get all food product",response = FoodProductEntity.class,tags = "Food product")
+    @ApiOperation(value = "get all food product",response = FoodProductEntity.class,tags = "Food Product")
     @GetMapping(value = "/products")
     public ResponseEntity<List<FoodProductEntity>> getAllFoodProduct(){return new ResponseEntity<>(productService.getAllFoodProduct(), HttpStatus.OK);}
-    @ApiOperation(value = "create food product",response = FoodProductEntity.class,tags = "Food product")
+    @ApiOperation(value = "create food product",response = FoodProductEntity.class,tags = "Food Product")
     @PostMapping(value = "/product")
     public ResponseEntity<FoodProductEntity> createFoodProduct(@RequestBody FoodProductEntity foodProduct){return new ResponseEntity<>(productService.createFoodProduct(foodProduct), HttpStatus.OK);}
-    @ApiOperation(value = "update food product",response = FoodProductEntity.class,tags = "Food product")
+    @ApiOperation(value = "update food product",response = FoodProductEntity.class,tags = "Food Product")
     @PutMapping(value = "/product")
     public ResponseEntity<FoodProductEntity> updateFoodProduct(@RequestBody FoodProductEntity foodProduct){return new ResponseEntity<>(productService.updateFoodProduct(foodProduct), HttpStatus.OK);}
 }
