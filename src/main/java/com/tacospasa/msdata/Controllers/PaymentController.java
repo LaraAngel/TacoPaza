@@ -1,13 +1,16 @@
 package com.tacospasa.msdata.Controllers;
 
+import com.tacospasa.msdata.Entity.FoodCategoryEntity;
 import com.tacospasa.msdata.Entity.PaymentEntity;
 import com.tacospasa.msdata.Entity.PaymentMethodEntity;
 import com.tacospasa.msdata.Entity.StatusEntity;
 import com.tacospasa.msdata.Service.PaymentService;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -19,19 +22,48 @@ import java.util.List;
 public class PaymentController {
     @Autowired
     private PaymentService paymentService;
-    PaymentEntity getPaymentById(Long id){
-        return null;
+
+    @ApiOperation(value = "get payment by id",response = PaymentEntity.class)
+    @GetMapping(value = "/payment/{id}")
+    ResponseEntity<PaymentEntity> getPaymentById(@PathVariable Long id){
+        return new ResponseEntity<>(paymentService.getPaymentById(id), HttpStatus.OK);
     }
-    List<PaymentEntity> getAllPayment(){return null;}
-    List<PaymentEntity> getPaymentByPaymentMethod(PaymentMethodEntity paymentMethod){return null;}
-    List<PaymentEntity> getPaymentByDate(Date date){return null;}
-    List<PaymentEntity> getPaymentByStatus(StatusEntity status){
-        return null;
+
+    @ApiOperation(value = "get All Payment",response = PaymentEntity.class)
+    @GetMapping(value = "/payments")
+    ResponseEntity<List<PaymentEntity>> getAllPayment (){
+        return new ResponseEntity<>(paymentService.getAllPayment(),HttpStatus.OK);
     }
+
+    @ApiOperation(value = "get payment method",response = PaymentEntity.class)
+    @GetMapping(value = "/payments/method")
+    ResponseEntity<List<PaymentEntity>> getPaymentByPaymentMethod(@RequestBody PaymentMethodEntity paymentMethod){
+        return new ResponseEntity<>(paymentService.getPaymentByPaymentMethod(paymentMethod),HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "get payment by date",response = PaymentEntity.class)
+    @GetMapping(value = "/payments/date")
+    ResponseEntity<List<PaymentEntity>> getPaymentByDate(@RequestParam Date date){
+        return new ResponseEntity<>(paymentService.getPaymentByDate(date),HttpStatus.OK);
+    }
+
+    @ApiOperation(value = "get payment by status",response = PaymentEntity.class)
+    @GetMapping(value = "/payments/status")
+    ResponseEntity<List<PaymentEntity>> getPaymentByStatus(@RequestParam StatusEntity status)
+    {
+        return new ResponseEntity<>(paymentService.getPaymentByStatus(status),HttpStatus.OK);
+
+    }
+
+    @ApiOperation(value = "create payment",response = PaymentEntity.class)
+    @GetMapping(value = "/payment")
     PaymentEntity createPayment(PaymentEntity payment){
-        return null;
+        return paymentService.createPayment(payment);
     }
+
+    @ApiOperation(value = "update payment",response = PaymentEntity.class)
+    @GetMapping(value = "/payment")
     PaymentEntity updatePayment(PaymentEntity payment){
-        return null;
+        return paymentService.updatePayment(payment);
     }
 }
