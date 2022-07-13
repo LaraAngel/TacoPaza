@@ -57,13 +57,13 @@ public class PaymentController {
 
     @ApiOperation(value = "create payment",response = PaymentEntity.class)
     @GetMapping(value = "/payment")
-    PaymentEntity createPayment(PaymentEntity payment){
-        return paymentService.createPayment(payment);
+    ResponseEntity<PaymentEntity> createPayment(PaymentEntity payment){
+        return new ResponseEntity<>(paymentService.createPayment(payment),HttpStatus.OK);
     }
 
     @ApiOperation(value = "update payment",response = PaymentEntity.class)
     @GetMapping(value = "/payment")
-    PaymentEntity updatePayment(PaymentEntity payment){
-        return paymentService.updatePayment(payment);
+    ResponseEntity<PaymentEntity> updatePayment(PaymentEntity payment){
+        return new ResponseEntity<>(paymentService.updatePayment(payment),HttpStatus.OK);
     }
 }
