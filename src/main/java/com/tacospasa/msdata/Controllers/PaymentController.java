@@ -56,13 +56,13 @@ public class PaymentController {
     }
 
     @ApiOperation(value = "create payment",response = PaymentEntity.class)
-    @GetMapping(value = "/payment")
+    @PostMapping(value = "/payment")
     ResponseEntity<PaymentEntity> createPayment(PaymentEntity payment){
         return new ResponseEntity<>(paymentService.createPayment(payment),HttpStatus.OK);
     }
 
     @ApiOperation(value = "update payment",response = PaymentEntity.class)
-    @GetMapping(value = "/payment")
+    @PutMapping(value = "/payment")
     ResponseEntity<PaymentEntity> updatePayment(PaymentEntity payment){
         return new ResponseEntity<>(paymentService.updatePayment(payment),HttpStatus.OK);
     }

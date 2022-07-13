@@ -28,11 +28,11 @@ public class FoodProductRuleController {
     public ResponseEntity<List<FoodProductRuleEntity>> getAllFoodProductRule(){return new ResponseEntity<>(ruleService.getAllFoodProductRule(), HttpStatus.OK);}
     @ApiOperation(value = "create Food Product Rule",response = FoodProductRuleEntity.class,tags = "Food Product Rule")
     @PostMapping(value = "/rule")
-    public ResponseEntity<FoodProductRuleEntity> createFoodProductRule(@RequestParam FoodProductRuleEntity FoodProductRule){return new ResponseEntity<>(ruleService.createFoodProductRule(FoodProductRule), HttpStatus.OK);}
+    public ResponseEntity<FoodProductRuleEntity> createFoodProductRule(@RequestBody FoodProductRuleEntity FoodProductRule){return new ResponseEntity<>(ruleService.createFoodProductRule(FoodProductRule), HttpStatus.OK);}
     @ApiOperation(value = "get Food Product Rule by id",response = FoodProductRuleEntity.class,tags = "Food Product Rule")
     @PutMapping(value = "/rule")
-    public ResponseEntity<FoodProductRuleEntity> updateFoodProductRule(@RequestParam FoodProductRuleEntity FoodProductRule){return new ResponseEntity<>(ruleService.updateFoodProductRule(FoodProductRule), HttpStatus.OK);}
+    public ResponseEntity<FoodProductRuleEntity> updateFoodProductRule(@RequestBody FoodProductRuleEntity FoodProductRule){return new ResponseEntity<>(ruleService.updateFoodProductRule(FoodProductRule), HttpStatus.OK);}
     @ApiOperation(value = "get all Food Product Rule by status",response = FoodProductRuleEntity.class,tags = "Food Product Rule")
     @GetMapping(value = "/rule/status")
-    public ResponseEntity<List<FoodProductRuleEntity>> getFoodProductRuleByStatus(@RequestParam StatusEntity status){return new ResponseEntity<>(ruleService.getAllFoodProductRuleByStatus(status), HttpStatus.OK);}
+    public ResponseEntity<List<FoodProductRuleEntity>> getFoodProductRuleByStatus(@RequestBody StatusEntity status){return new ResponseEntity<>(ruleService.getAllFoodProductRuleByStatus(status), HttpStatus.OK);}
 }

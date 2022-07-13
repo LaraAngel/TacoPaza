@@ -26,11 +26,11 @@ public class FoodCategoryController {
     public ResponseEntity<List<FoodCategoryEntity>> getAllFoodCategory(){return new ResponseEntity<>(service.getAllFoodCategory(), HttpStatus.OK);}
     @ApiOperation(value = "create food category",response = FoodCategoryEntity.class,tags = "Food category")
     @PostMapping(value = "/category")
-    public ResponseEntity<FoodCategoryEntity> createFoodCategory(@RequestParam FoodCategoryEntity foodCategory){return new ResponseEntity<>(service.createFoodCategory(foodCategory), HttpStatus.OK);}
+    public ResponseEntity<FoodCategoryEntity> createFoodCategory(@RequestBody FoodCategoryEntity foodCategory){return new ResponseEntity<>(service.createFoodCategory(foodCategory), HttpStatus.OK);}
     @ApiOperation(value = "get food category by id",response = FoodCategoryEntity.class,tags = "Food category")
     @PutMapping(value = "/category")
-    public ResponseEntity<FoodCategoryEntity> updateFoodCategory(@RequestParam FoodCategoryEntity foodCategory){return new ResponseEntity<>(service.updateFoodCategory(foodCategory), HttpStatus.OK);}
+    public ResponseEntity<FoodCategoryEntity> updateFoodCategory(@RequestBody FoodCategoryEntity foodCategory){return new ResponseEntity<>(service.updateFoodCategory(foodCategory), HttpStatus.OK);}
     @ApiOperation(value = "get all food category by status",response = FoodCategoryEntity.class,tags = "Food category")
     @GetMapping(value = "/category/status")
-    public ResponseEntity<List<FoodCategoryEntity>> getFoodCategoryByStatus(@RequestParam StatusEntity status){return new ResponseEntity<>(service.getAllFoodCategoryByStatus(status), HttpStatus.OK);}
+    public ResponseEntity<List<FoodCategoryEntity>> getFoodCategoryByStatus(@RequestBody StatusEntity status){return new ResponseEntity<>(service.getAllFoodCategoryByStatus(status), HttpStatus.OK);}
 }
