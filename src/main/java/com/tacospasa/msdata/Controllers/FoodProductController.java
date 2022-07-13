@@ -18,16 +18,16 @@ import java.util.List;
 public class FoodProductController {
     @Autowired
     private FoodProductService productService;
-    @ApiOperation(value = "get food product by id",response = FoodProductEntity.class,tags = "Food category")
+    @ApiOperation(value = "get food product by id",response = FoodProductEntity.class,tags = "Food product")
     @GetMapping(value = "/product/{id}")
     public ResponseEntity<FoodProductEntity> getFoodProductById(@PathVariable Long id){return new ResponseEntity<>(productService.getFoodProductById(id), HttpStatus.OK);}
-    @ApiOperation(value = "get all food product",response = FoodProductEntity.class,tags = "Food category")
+    @ApiOperation(value = "get all food product",response = FoodProductEntity.class,tags = "Food product")
     @GetMapping(value = "/products")
     public ResponseEntity<List<FoodProductEntity>> getAllFoodProduct(){return new ResponseEntity<>(productService.getAllFoodProduct(), HttpStatus.OK);}
-    @ApiOperation(value = "create food product",response = FoodProductEntity.class,tags = "Food category")
+    @ApiOperation(value = "create food product",response = FoodProductEntity.class,tags = "Food product")
     @PostMapping(value = "/product")
-    public ResponseEntity<FoodProductEntity> createFoodProduct(@RequestParam FoodProductEntity foodProduct){return new ResponseEntity<>(productService.createFoodProduct(foodProduct), HttpStatus.OK);}
-    @ApiOperation(value = "update food product",response = FoodProductEntity.class,tags = "Food category")
+    public ResponseEntity<FoodProductEntity> createFoodProduct(@RequestBody FoodProductEntity foodProduct){return new ResponseEntity<>(productService.createFoodProduct(foodProduct), HttpStatus.OK);}
+    @ApiOperation(value = "update food product",response = FoodProductEntity.class,tags = "Food product")
     @PutMapping(value = "/product")
-    public ResponseEntity<FoodProductEntity> updateFoodProduct(@RequestParam FoodProductEntity foodProduct){return new ResponseEntity<>(productService.updateFoodProduct(foodProduct), HttpStatus.OK);}
+    public ResponseEntity<FoodProductEntity> updateFoodProduct(@RequestBody FoodProductEntity foodProduct){return new ResponseEntity<>(productService.updateFoodProduct(foodProduct), HttpStatus.OK);}
 }
