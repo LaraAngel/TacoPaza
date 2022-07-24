@@ -13,7 +13,7 @@ public class StatusServiceImpl implements StatusService{
     @Override
     public List<StatusEntity> getAllStatus() { return repository.findAll();  }
     @Override
-    public StatusEntity getStatusById(Long id) { return repository.getReferenceById(id);   }
+    public StatusEntity getStatusById(Long id) { return repository.getStatusById(id);   }
     @Override
     public StatusEntity createStatus(StatusEntity status) { return repository.saveAndFlush(status);    }
     @Override
