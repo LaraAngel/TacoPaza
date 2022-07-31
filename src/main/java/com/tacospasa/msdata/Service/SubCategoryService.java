@@ -9,4 +9,5 @@ public interface SubCategoryService {
      SubCategoryEntity createMultipleSubCategories(List<SubCategoryEntity> subCategory);
      List<SubCategoryEntity> getAllSubCategories();
      SubCategoryEntity getSubCategoryById(Long id);
+    SubCategoryEntity updateSubCategory(SubCategoryEntity category);
 }

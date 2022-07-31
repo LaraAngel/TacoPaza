@@ -11,5 +11,5 @@ public interface MenuCategoryService {
     MenuCategoryEntity createNewMenuCategory(MenuCategoryEntity menuCategory);
     MenuCategoryEntity addSubCategories(List<SubCategoryEntity> subCategories, Long id);
     MenuCategoryEntity addSubCategory(SubCategoryEntity subCategory, Long id);
-
+    MenuCategoryEntity updateMenuCategory(MenuCategoryEntity category);
 }

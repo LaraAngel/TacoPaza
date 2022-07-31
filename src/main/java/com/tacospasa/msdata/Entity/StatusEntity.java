@@ -11,5 +11,6 @@ StatusEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String statusName;
+    private String status_name;
+
 }

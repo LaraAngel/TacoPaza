@@ -33,4 +33,9 @@ public class SubCategoryServiceImpl implements SubCategoryService {
     public SubCategoryEntity getSubCategoryById(Long id) {
         return repository.getReferenceById(id);
     }
+
+    @Override
+    public SubCategoryEntity updateSubCategory(SubCategoryEntity category) {
+        return repository.saveAndFlush(category);
+    }
 }

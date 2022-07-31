@@ -35,7 +35,9 @@ public class MenuController {
     public MenuCategoryEntity createNewMenuCategory(@RequestBody MenuCategoryEntity menuCategory) {
         return service.createNewMenuCategory(menuCategory);
     }
-
+    @ApiOperation(value = "update Category", response = MenuCategoryEntity.class, tags = "Menu")
+    @PutMapping(value = "/category")
+    public MenuCategoryEntity updateMenuCategory(@RequestBody MenuCategoryEntity category){return service.updateMenuCategory(category);}
     @ApiOperation(value = "Add new SubCategories", response = MenuCategoryEntity.class, tags = "Menu")
     @PutMapping(value = "/category/subcategories")
     public MenuCategoryEntity addSubCategories(@RequestBody List<SubCategoryEntity> subCategories, @RequestParam Long id) {

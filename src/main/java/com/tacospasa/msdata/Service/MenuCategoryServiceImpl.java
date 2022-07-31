@@ -41,4 +41,9 @@ public class MenuCategoryServiceImpl implements MenuCategoryService {
         menu.setSubCategories(subCategoriesFromDB);
         return repository.saveAndFlush(menu);
     }
+
+    @Override
+    public MenuCategoryEntity updateMenuCategory(MenuCategoryEntity category) {
+        return repository.saveAndFlush(category);
+    }
 }

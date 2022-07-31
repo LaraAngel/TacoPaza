@@ -25,12 +25,14 @@ public class SubCategoryController {
         return service.createSubCategory(subCategory);
     }
 
-    @ApiOperation(value = "Create new subCategory", response = SubCategoryEntity.class, tags = "Subcategory")
+    @ApiOperation(value = "Create new subCategories", response = SubCategoryEntity.class, tags = "Subcategory")
     @PostMapping(value = "/subcategories")
     public SubCategoryEntity createMultipleSubCategories(@RequestBody List<SubCategoryEntity> subCategory){
         return service.createMultipleSubCategories(subCategory);
     }
-
+    @ApiOperation(value = "update subcategory", response = SubCategoryEntity.class)
+    @PutMapping(value = "/subcategory")
+    public SubCategoryEntity updateSubCategory(@RequestBody SubCategoryEntity category){return service.updateSubCategory(category);}
     @ApiOperation(value = "Get all subCategories", response = SubCategoryEntity.class, tags = "Subcategory")
     @GetMapping(value = "/subcategories")
     public List<SubCategoryEntity> getAllSubCategories(){
