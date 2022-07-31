@@ -29,7 +29,7 @@ public class FoodProductRuleController {
     @ApiOperation(value = "create Food Product Rule",response = FoodProductRuleEntity.class,tags = "Food Product Rule")
     @PostMapping(value = "/rule")
     public ResponseEntity<FoodProductRuleEntity> createFoodProductRule(@RequestBody FoodProductRuleEntity FoodProductRule){return new ResponseEntity<>(ruleService.createFoodProductRule(FoodProductRule), HttpStatus.OK);}
-    @ApiOperation(value = "get Food Product Rule by id",response = FoodProductRuleEntity.class,tags = "Food Product Rule")
+    @ApiOperation(value = "update Food Product Rule",response = FoodProductRuleEntity.class,tags = "Food Product Rule")
     @PutMapping(value = "/rule")
     public ResponseEntity<FoodProductRuleEntity> updateFoodProductRule(@RequestBody FoodProductRuleEntity FoodProductRule){return new ResponseEntity<>(ruleService.updateFoodProductRule(FoodProductRule), HttpStatus.OK);}
     @ApiOperation(value = "get all Food Product Rule by status",response = FoodProductRuleEntity.class,tags = "Food Product Rule")

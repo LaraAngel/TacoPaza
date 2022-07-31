@@ -31,7 +31,7 @@ public class AccessController {
         return service.getAllAccesses();
     }
     @ApiOperation(value = "Get access by id", response = AccessEntity.class, tags = "Access")
-    @GetMapping(value = "/access{id}")
+    @GetMapping(value = "/access/{id}")
     public AccessEntity getAccessById(@PathVariable Long id){
         return service.getAccessById(id);
     }

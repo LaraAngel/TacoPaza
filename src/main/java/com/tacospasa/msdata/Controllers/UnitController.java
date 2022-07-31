@@ -26,5 +26,5 @@ public class UnitController {
     public UnitEntity updateUnitMeasure(@RequestBody UnitEntity unit){return service.updateUnit(unit);}
     @ApiOperation(value = "create measurement unit", response = UnitEntity.class, tags = "Measurement units")
     @PostMapping(value = "/unit")
-    public UnitEntity createUnitMeasure(@RequestParam UnitEntity unit){return service.createUnit(unit);}
+    public UnitEntity createUnitMeasure(@RequestBody UnitEntity unit){return service.createUnit(unit);}
 }

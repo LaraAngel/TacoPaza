@@ -20,7 +20,7 @@ public class InventoryProductController {
     private InventoryProductService invProdservice;
 
     @ApiOperation(value = "Get InventoryProduct by id", response = InventoryProductEntity.class, tags = "Inventory Product")
-    @GetMapping(value = "/inventory-product{id}")
+    @GetMapping(value = "/inventory-product/{id}")
     public ResponseEntity<InventoryProductEntity> getInventoryProductById(@PathVariable Long id){
         return new ResponseEntity<>(invProdservice.getInventoryProductById(id), HttpStatus.OK);
     }

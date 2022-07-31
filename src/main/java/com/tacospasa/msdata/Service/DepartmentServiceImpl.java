@@ -17,4 +17,6 @@ public class DepartmentServiceImpl implements DepartmentService{
     public List<DepartmentEntity> getAllDepartments() {return repository.findAll();}
     @Override
     public DepartmentEntity getDepartmentById(Long id) {return repository.getReferenceById(id);}
+    @Override
+    public DepartmentEntity updateDepartment(DepartmentEntity department) {return repository.saveAndFlush(department);}
 }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -23,8 +24,8 @@ public class CashBalanceController {
     private CashBalanceService cashBalanceService;
 
     @ApiOperation(value = "get cash balance by id",response = CashBalanceEntity.class)
-    @GetMapping(value = "/payment/cash-balance")
-    ResponseEntity <CashBalanceEntity> getCashBalanceById(@RequestParam Long id) {
+    @GetMapping(value = "/payment/cash-balance/{id}")
+    ResponseEntity <CashBalanceEntity> getCashBalanceById(@PathVariable Long id) {
         return new ResponseEntity<>(cashBalanceService.getCashBalanceById(id),HttpStatus.OK);
     }
 

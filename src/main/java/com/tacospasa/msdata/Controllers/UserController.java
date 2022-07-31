@@ -29,7 +29,7 @@ public class UserController {
     }
     @ApiOperation(value = "Get users by Status", response= UserEntity.class, tags = "Users")
     @GetMapping(value= "/user/status")
-    public List<UserEntity> getAllUsersByStatus(@RequestParam StatusEntity status){
+    public List<UserEntity> getAllUsersByStatus(@RequestBody StatusEntity status){
         return userService.getAllUsersByStatus(status);
     }
     @ApiOperation(value = "Get all the users", response = UserEntity.class, tags = "Users")
@@ -49,10 +49,10 @@ public class UserController {
     }
     @ApiOperation(value = "Update user status", response= UserEntity.class, tags = "Users")
     @PutMapping(value = "/user/status")
-    public UserEntity updateUserStatus(@RequestParam Long id, @RequestParam StatusEntity status){
+    public UserEntity updateUserStatus(@RequestParam Long id, @RequestBody StatusEntity status){
         return userService.updateUserStatus(id, status);
     }
     @ApiOperation(value = "Get user by role", response = UserEntity.class, tags = "Users")
     @GetMapping(value = "/user/role")
-    public List<UserEntity> getAllUsersByRole(@RequestParam RoleEntity role){ return userService.getAllUsersByRole(role);}
+    public List<UserEntity> getAllUsersByRole(@RequestBody RoleEntity role){ return userService.getAllUsersByRole(role);}
 }

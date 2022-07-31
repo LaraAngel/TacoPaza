@@ -17,15 +17,15 @@ public class PaymentMethodController {
     @Autowired
     private PaymentMethodService paymentMethodService;
 
-    @ApiOperation(value = "get All Payment Methods",response = PaymentMethodEntity.class,tags = "Payment Method")
-    @GetMapping(value = "/methods")
-    public List<PaymentMethodEntity> getAllPaymentMethod(){
-        return paymentMethodService.getAllPaymentMethod();
-    }
     @ApiOperation(value = "getById Payment Methods",response = PaymentMethodEntity.class,tags = "Payment Method")
     @GetMapping(value = "/method/{id}")
     public PaymentMethodEntity getPaymentMethodById(@PathVariable Long id){
         return paymentMethodService.getPaymentMethodById(id);
+    }
+    @ApiOperation(value = "get All Payment Methods",response = PaymentMethodEntity.class,tags = "Payment Method")
+    @GetMapping(value = "/methods")
+    public List<PaymentMethodEntity> getAllPaymentMethod(){
+        return paymentMethodService.getAllPaymentMethod();
     }
     @ApiOperation(value = "Update Payment Method ", response= UserEntity.class, tags = "Payment Method")
     @PutMapping(value = "/method")

@@ -49,21 +49,19 @@ public class PaymentController {
 
     @ApiOperation(value = "get payment by status",response = PaymentEntity.class)
     @GetMapping(value = "/payments/status")
-    ResponseEntity<List<PaymentEntity>> getPaymentByStatus(@RequestParam StatusEntity status)
-    {
+    ResponseEntity<List<PaymentEntity>> getPaymentByStatus(@RequestBody StatusEntity status) {
         return new ResponseEntity<>(paymentService.getPaymentByStatus(status),HttpStatus.OK);
-
     }
 
     @ApiOperation(value = "create payment",response = PaymentEntity.class)
     @PostMapping(value = "/payment")
-    ResponseEntity<PaymentEntity> createPayment(PaymentEntity payment){
+    ResponseEntity<PaymentEntity> createPayment(@RequestBody PaymentEntity payment){
         return new ResponseEntity<>(paymentService.createPayment(payment),HttpStatus.OK);
     }
 
     @ApiOperation(value = "update payment",response = PaymentEntity.class)
     @PutMapping(value = "/payment")
-    ResponseEntity<PaymentEntity> updatePayment(PaymentEntity payment){
+    ResponseEntity<PaymentEntity> updatePayment(@RequestBody PaymentEntity payment){
         return new ResponseEntity<>(paymentService.updatePayment(payment),HttpStatus.OK);
     }
 }

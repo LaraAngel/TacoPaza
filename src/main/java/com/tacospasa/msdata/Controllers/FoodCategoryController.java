@@ -27,7 +27,7 @@ public class FoodCategoryController {
     @ApiOperation(value = "create food category",response = FoodCategoryEntity.class,tags = "Food category")
     @PostMapping(value = "/category")
     public ResponseEntity<FoodCategoryEntity> createFoodCategory(@RequestBody FoodCategoryEntity foodCategory){return new ResponseEntity<>(service.createFoodCategory(foodCategory), HttpStatus.OK);}
-    @ApiOperation(value = "get food category by id",response = FoodCategoryEntity.class,tags = "Food category")
+    @ApiOperation(value = "update food category",response = FoodCategoryEntity.class,tags = "Food category")
     @PutMapping(value = "/category")
     public ResponseEntity<FoodCategoryEntity> updateFoodCategory(@RequestBody FoodCategoryEntity foodCategory){return new ResponseEntity<>(service.updateFoodCategory(foodCategory), HttpStatus.OK);}
     @ApiOperation(value = "get all food category by status",response = FoodCategoryEntity.class,tags = "Food category")

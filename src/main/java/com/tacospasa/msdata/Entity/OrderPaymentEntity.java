@@ -3,10 +3,10 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Order_Food_Payment")
+@Table(name = "order_payment")
 @Data
 
-public class OrderFoodPaymentEntity {
+public class OrderPaymentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -21,6 +21,6 @@ public class OrderFoodPaymentEntity {
     private Float total;
     private Float remainder;
     @OneToOne
-    private UserEntity responsable;
+    private UserEntity responsible;
 
 }

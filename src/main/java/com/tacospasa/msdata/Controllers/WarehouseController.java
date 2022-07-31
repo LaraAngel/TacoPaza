@@ -23,7 +23,7 @@ public class WarehouseController {
     public List<WarehouseEntity> getAllWarehouses(){return warehouseService.getAllWarehouses();}
     @ApiOperation(value = "create warehouse", response = WarehouseEntity.class, tags = "Warehouse")
     @PostMapping(value = "/Warehouse")
-    public WarehouseEntity createNewWarehouse(@RequestParam WarehouseEntity warehouse){return warehouseService.createNewWarehouse(warehouse);}
+    public WarehouseEntity createNewWarehouse(@RequestBody WarehouseEntity warehouse){return warehouseService.createNewWarehouse(warehouse);}
     @ApiOperation(value = "update warehouse", response = WarehouseEntity.class, tags = "Warehouse")
     @PutMapping(value = "/Warehouse")
     public WarehouseEntity deleteWarehouseById(@RequestBody WarehouseEntity warehouse){return warehouseService.updateWarehouse(warehouse);}
