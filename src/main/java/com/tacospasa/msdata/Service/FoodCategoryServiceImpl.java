@@ -13,7 +13,7 @@ public class FoodCategoryServiceImpl implements FoodCategoryService{
     private FoodCategoryRepository repository;
     @Override
     public FoodCategoryEntity getFoodCategoryById(Long id) {
-        return repository.getReferenceById(id);
+        return repository.getFoodCategoryById(id);
     }
 
     @Override

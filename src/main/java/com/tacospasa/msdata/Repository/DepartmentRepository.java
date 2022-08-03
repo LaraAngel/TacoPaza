@@ -6,4 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface DepartmentRepository extends JpaRepository<DepartmentEntity,Long> {
+    @Query("select dp from DepartmentEntity dp where dp.id =:id")
+    DepartmentEntity getDepartmentById(@Param("id") Long id);
 }

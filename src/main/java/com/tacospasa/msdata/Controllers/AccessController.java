@@ -22,9 +22,7 @@ public class AccessController {
     }
     @ApiOperation(value = "Create new accesses", response = AccessEntity.class, tags = "Access")
     @PostMapping(value = "/accesses")
-    public AccessEntity createAccesses(@RequestBody List<AccessEntity> access){
-        return service.createAccesses(access);
-    }
+    public List<AccessEntity> createAccesses(@RequestBody List<AccessEntity> access){return service.createAccesses(access);}
     @ApiOperation(value = "Get all accesses", response = AccessEntity.class, tags = "Access")
     @GetMapping(value = "/accesses")
     public List<AccessEntity> getAllAccess(){
@@ -35,4 +33,7 @@ public class AccessController {
     public AccessEntity getAccessById(@PathVariable Long id){
         return service.getAccessById(id);
     }
+    @ApiOperation(value = "update access", response = AccessEntity.class)
+    @PutMapping(value = "/access")
+    public AccessEntity updateAccess(@RequestBody AccessEntity access){return service.updateAccess(access);}
 }
