@@ -17,9 +17,9 @@ public class AccessServiceImpl implements AccessService {
         return repository.saveAndFlush(access);
     }
     @Override
-    public AccessEntity createAccesses(List<AccessEntity> accessEntities) {
-        accessEntities.stream().forEach(access -> repository.save(access));
-        return new AccessEntity();
+    public List<AccessEntity> createAccesses(List<AccessEntity> accessEntities) {
+        accessEntities.stream().forEach(access -> repository.saveAndFlush(access));
+        return accessEntities;
     }
     @Override
     public List<AccessEntity> getAllAccesses() {
@@ -29,4 +29,7 @@ public class AccessServiceImpl implements AccessService {
     public AccessEntity getAccessById(Long id) {
         return repository.getReferenceById(id);
     }
+
+    @Override
+    public AccessEntity updateAccess(AccessEntity access) {return repository.saveAndFlush(access);    }
 }
