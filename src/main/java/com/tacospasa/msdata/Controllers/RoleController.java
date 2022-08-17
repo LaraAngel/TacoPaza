@@ -18,7 +18,7 @@ public class RoleController {
     private RoleService service;
 
     @ApiOperation(value = "Get role by id", response = RoleEntity.class, tags = "Role")
-    @GetMapping(value = "/role{id}")
+    @GetMapping(value = "/role/{id}")
     public RoleEntity getRoleById(@PathVariable Long id) {
         return service.getRoleById(id);
     }
@@ -39,4 +39,7 @@ public class RoleController {
     public RoleEntity addAccess(@RequestBody AccessEntity access,@RequestParam Long id) {
         return service.addAccess(access, id);
     }
+    @ApiOperation(value = "update role", response = RoleEntity.class, tags = "Role")
+    @PutMapping(value = "/role")
+    public RoleEntity addAccess(@RequestBody RoleEntity role) {  return service.updateRole(role);}
 }

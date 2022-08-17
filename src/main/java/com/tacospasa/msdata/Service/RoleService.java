@@ -11,5 +11,5 @@ public interface RoleService {
     List<RoleEntity> getAllRoles();
     RoleEntity createNewRole(RoleEntity role);
     RoleEntity addAccess(AccessEntity access, Long id);
-
+    RoleEntity updateRole(RoleEntity role);
 }

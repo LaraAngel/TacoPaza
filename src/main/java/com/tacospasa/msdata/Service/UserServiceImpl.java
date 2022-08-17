@@ -20,36 +20,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserEntity getUserById(Long id) { return repository.findById(id).get();
-    }
+    public UserEntity getUserById(Long id) { return repository.getUserById(id);}
 
     @Override
-    public UserEntity getUserByUserName(String userName) {
-        return repository.getUserByUserName(userName);
-    }
-
+    public UserEntity getUserByUserName(String userName) {return repository.getUserByUserName(userName);}
     @Override
-    public UserEntity createUser(UserEntity user) {
-        return repository.saveAndFlush(user);
-    }
-
+    public UserEntity createUser(UserEntity user) {return repository.saveAndFlush(user);}
     @Override
     public UserEntity updateUserStatus(Long id,StatusEntity status) {
         UserEntity user = getUserById(id);
         user.setStatus(status);
-        return repository.saveAndFlush(user);
-    }
+        return repository.saveAndFlush(user);}
 
     @Override
     public UserEntity updateUser(UserEntity user) {return repository.saveAndFlush(user);}
-
     @Override
-    public List<UserEntity> getAllUsersByRole(RoleEntity role) {
-        return repository.getUserByRole(role);
-    }
-
+    public List<UserEntity> getAllUsersByRole(Long id) {return repository.getUserByRole(id);}
     @Override
-    public List<UserEntity> getAllUsersByStatus(StatusEntity status) {
-        return repository.getUsersByStatus(status);
-    }
+    public List<UserEntity> getAllUsersByStatus(Long id) {return repository.getUsersByStatus(id);}
 }

@@ -15,7 +15,7 @@ public class RoleServiceImpl implements RoleService{
 
     @Override
     public RoleEntity getRoleById(Long id) {
-        return repository.getReferenceById(id);
+        return repository.getRoleById(id);
     }
     @Override
     public List<RoleEntity> getAllRoles() {
@@ -34,4 +34,7 @@ public class RoleServiceImpl implements RoleService{
         accessFromDB.add(access);
         role.setAccess(accessFromDB);
         return repository.saveAndFlush(role);    }
+
+    @Override
+    public RoleEntity updateRole(RoleEntity role) {return repository.saveAndFlush(role);    }
 }
