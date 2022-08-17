@@ -17,6 +17,6 @@ public class RoleEntity {
     private  String roleName;
     @OneToOne
     private StatusEntity status;
-    @ElementCollection
+    @ManyToMany
     private List<AccessEntity> access;
 }

@@ -8,11 +8,11 @@ import java.util.List;
 public interface UserService {
     UserEntity getUserById(Long id);
     UserEntity getUserByUserName(String userName);
-    List<UserEntity> getAllUsersByStatus(StatusEntity status);
+    List<UserEntity> getAllUsersByStatus(Long id);
     List<UserEntity> getAllUsers();
     UserEntity createUser(UserEntity user);
     UserEntity updateUserStatus(Long id, StatusEntity status);
     UserEntity updateUser(UserEntity user);
-    List<UserEntity> getAllUsersByRole(RoleEntity role);
+    List<UserEntity> getAllUsersByRole(Long id);
 
 }

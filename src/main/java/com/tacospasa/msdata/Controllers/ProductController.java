@@ -11,20 +11,20 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/inventory")
-@Api(tags = "product")
+@Api(tags = "Product")
 public class ProductController {
     @Autowired
     private ProductService productService;
-    @ApiOperation(value = "get product by id", response = ProductEntity.class, tags = "product")
+    @ApiOperation(value = "get product by id", response = ProductEntity.class, tags = "Product")
     @GetMapping(value = "/product/{id}")
     public ProductEntity getProductById(@PathVariable Long id){return productService.getProductById(id);}
-    @ApiOperation(value = "Get all products", response = ProductEntity.class, tags = "product")
+    @ApiOperation(value = "Get all products", response = ProductEntity.class, tags = "Product")
     @GetMapping(value = "/products")
     public List<ProductEntity> getAllProducts(){return productService.getAllProducts();}
-    @ApiOperation(value = "Create new Product", response = ProductEntity.class, tags = "product")
+    @ApiOperation(value = "Create new Product", response = ProductEntity.class, tags = "Product")
     @PostMapping(value = "/product")
     public ProductEntity createProduct(@RequestBody ProductEntity product){return productService.createProduct(product);}
-    @ApiOperation(value = "Update product", response = ProductEntity.class, tags = "product")
+    @ApiOperation(value = "Update product", response = ProductEntity.class, tags = "Product")
     @PutMapping(value = "/product")
     public ProductEntity updateProduct(@RequestBody ProductEntity product){return productService.updateProduct(product);}
 }

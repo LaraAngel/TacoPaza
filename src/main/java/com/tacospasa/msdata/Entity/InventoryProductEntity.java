@@ -16,13 +16,14 @@ public class InventoryProductEntity {
     private Long quantity;
     @OneToOne
     private PresentationEntity presentation;
-    @ManyToOne
+    @OneToOne
     private WarehouseEntity warehouse;
-    @ManyToOne
+    @OneToOne
     private BranchEntity branch;
     private Date expirationDate;
     private Date inputDate;
-    @ManyToOne
+    @OneToOne
     private ProviderEntity provider;
-    @OneToOne StatusEntity status;
+    @OneToOne
+    private StatusEntity status;
 }

@@ -23,14 +23,14 @@ public class UserController {
         return userService.getUserById(id);
     }
     @ApiOperation(value = "Get user by username", response= UserEntity.class, tags = "Users")
-    @GetMapping(value="/user/{userName}")
+    @GetMapping(value="/User/{userName}")
     public UserEntity getUserByUserName(@PathVariable String userName){
         return userService.getUserByUserName(userName);
     }
     @ApiOperation(value = "Get users by Status", response= UserEntity.class, tags = "Users")
     @GetMapping(value= "/user/status")
-    public List<UserEntity> getAllUsersByStatus(@RequestBody StatusEntity status){
-        return userService.getAllUsersByStatus(status);
+    public List<UserEntity> getAllUsersByStatus(@RequestParam Long id){
+        return userService.getAllUsersByStatus(id);
     }
     @ApiOperation(value = "Get all the users", response = UserEntity.class, tags = "Users")
     @GetMapping(value = "/users")
@@ -54,5 +54,5 @@ public class UserController {
     }
     @ApiOperation(value = "Get user by role", response = UserEntity.class, tags = "Users")
     @GetMapping(value = "/user/role")
-    public List<UserEntity> getAllUsersByRole(@RequestBody RoleEntity role){ return userService.getAllUsersByRole(role);}
+    public List<UserEntity> getAllUsersByRole(@RequestParam Long id){ return userService.getAllUsersByRole(id);}
 }

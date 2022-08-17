@@ -8,14 +8,12 @@ import javax.persistence.*;
 @Entity
 @Table(name = "access")
 @Data
-@Embeddable
 public class AccessEntity {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private  String access_name;
-    @ManyToOne
-    @JoinColumn(name = "status_id")
+    @OneToOne
     private StatusEntity status;
 }
